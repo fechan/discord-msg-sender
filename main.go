@@ -19,7 +19,7 @@ func main() {
 		}
 	}
 
-	// Parse environment variables from command line and falling back to .env
+	// Load necessary args, trying in order: (1) command line flags, (2) command line env args, (3) .env file
 	botTokenPtr := flag.String("bot_token", os.Getenv("BOT_TOKEN"), "ID of the channel to send to")
 	channelIdPtr := flag.String("channel_id", os.Getenv("CHANNEL_ID"), "ID of the channel to send to")
 	messagePtr := flag.String("message", os.Getenv("MESSAGE"), "The message to send")
